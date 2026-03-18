@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Liip\RMT\Action\BaseAction;
+use Liip\RMT\Context;
 use MHD\RmtVersioning\FileManager\ChangelogTxtFileManager;
 
 class ChangelogTxtAction extends BaseAction
