@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace MHD\RmtVersioning\Action;
-
 use Liip\RMT\Action\BaseAction;
 use Liip\RMT\Context;
 use MHD\RmtVersioning\FileManager\VersionTxtFileManager;

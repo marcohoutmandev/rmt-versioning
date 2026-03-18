@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace MHD\RmtVersioning\FileManager;
-
 use DateTime;
 use Liip\RMT\Context;
 

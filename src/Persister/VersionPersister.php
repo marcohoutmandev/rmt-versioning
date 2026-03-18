@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-//namespace MHD\RmtVersioning\Persister;
-
 use Liip\RMT\Context;
 use Liip\RMT\Version\Persister\VcsTagPersister;
 use MHD\RmtVersioning\FileManager\VersionTxtFileManager;
