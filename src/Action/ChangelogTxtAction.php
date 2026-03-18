@@ -8,6 +8,12 @@ class ChangelogTxtAction extends BaseAction
 {
     public function execute()
     {
-        // 
+        $changelogTxtFileManager = new ChangelogTxtFileManager(Context::getParam('project-root'));
+
+        $nextVersion = Context::getParam('new-version');
+
+        $changelogTxtFileManager->updateChangelog($nextVersion);
+        
+        $this->confirmSuccess();
     }
 }
