@@ -9,12 +9,11 @@ use Liip\RMT\Context;
 
 class ChangelogTxtFileManager
 {
-
     /**
      * The name of the file where the changelog
      * @var string
      */
-    const CHANGELOG_FILE = 'CHANGELOG.txt';
+    public const CHANGELOG_FILE = 'CHANGELOG.txt';
 
     /**
      * Genereated / combined folder + filename for the changelog file
@@ -26,21 +25,18 @@ class ChangelogTxtFileManager
      * Custom changelog filename specified; in case project does not want to use CHANGELOG.txt
      * @var string
      */
-    private string $customChangelogFileName = '';
+    private string $customFileName = '';
 
     public function __construct(string $folder = '/', string $customChangelogFile = '')
     {
         $this->changelogFile = $folder . DIRECTORY_SEPARATOR;
         if (trim($customChangelogFile) !== '') {
             // there is a custom changelog filename
-            $this->changelogFile .= trim($customChangelogFile);
-            $this->customChangelogFileName = trim($customChangelogFile);
-        } else {
-            // default:
-            $this->changelogFile .=  self::CHANGELOG_FILE;
+            $this->customFileName = trim($customChangelogFile);
         }
+        $this->changelogFile .= ($this->customFileName !== '' ? $this->customFileName : self::CHANGELOG_FILE);
 
-        // @todo Safety checks; make sure the file is not outside of the project 
+        // @todo Safety checks; make sure the file is not outside of the project
         $this->changelogFile = str_replace('/../', '/', $this->changelogFile);
     }
 
@@ -72,12 +68,11 @@ class ChangelogTxtFileManager
      * Returns the changelog filename, for use in vcs commit
      * @return string
      */
-    public function getChangelogFileName() : string
+    public function getChangelogFileName(): string
     {
-        if ($this->customChangelogFileName !== '') {
-            return $this->customChangelogFileName;
-        } else {
-            return self::CHANGELOG_FILE;
+        if ($this->customFileName !== '') {
+            return $this->customFileName;
         }
+        return self::CHANGELOG_FILE;
     }
 }

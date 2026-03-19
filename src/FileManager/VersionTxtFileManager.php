@@ -6,12 +6,11 @@ namespace MHD\RmtVersioning\FileManager;
 
 class VersionTxtFileManager
 {
-
     /**
      * The name of the file where the (current) version gets stored
      * @var string
      */
-    const VERSION_FILE = 'VERSION.txt';
+    public const VERSION_FILE = 'VERSION.txt';
 
     /**
      * Genereated / combined folder + filename for the version file
@@ -23,21 +22,18 @@ class VersionTxtFileManager
      * Custom version filename specified; in case project does not want to use VERSION.txt
      * @var string
      */
-    private string $customVersionFileName = '';
+    private string $customFileName = '';
 
     public function __construct(string $folder = '/', string $customVersionFile = '')
     {
         $this->versionFile = $folder . DIRECTORY_SEPARATOR;
         if (trim($customVersionFile) !== '') {
             // there is a custom version filename
-            $this->versionFile .= trim($customVersionFile);
-            $this->customVersionFileName = trim($customVersionFile);
-        } else {
-            // default:
-            $this->versionFile .=  self::VERSION_FILE;
+            $this->customFileName = trim($customVersionFile);
         }
+        $this->versionFile .= ($this->customFileName !== '' ? $this->customFileName : self::VERSION_FILE);
 
-        // @todo Safety checks; make sure the file is not outside of the project 
+        // @todo Safety checks; make sure the file is not outside of the project
         $this->versionFile = str_replace('/../', '/', $this->versionFile);
     }
 
@@ -66,13 +62,11 @@ class VersionTxtFileManager
      * Returns the version filename, for use in vcs commit
      * @return string
      */
-    public function getVersionFileName() : string
+    public function getVersionFileName(): string
     {
-        if ($this->customVersionFileName !== '') {
-            return $this->customVersionFileName;
-        } else {
-            return self::VERSION_FILE;
+        if ($this->customFileName !== '') {
+            return $this->customFileName;
         }
+        return self::VERSION_FILE;
     }
-
 }

@@ -2,7 +2,8 @@
   "name": "marcohoutmandev/rmt-versioning",
   "description": "Extension for the RMT package. Used for adding custom versioning + changelog handeling. ",
   "type": "library",
-  "homepage": "https://github.com/MarcoHoutmanDev/rmt-versioning",
+  "license": "MIT",
+  "homepage": "https://github.com/marcohoutmandev/rmt-versioning",
   "version": "1.0.1",
   "keywords": [
     "RMT",
@@ -22,5 +23,17 @@
   "require": {
     "php": "~8.4.0 || ~8.5.0",
     "liip/rmt": "^1.9"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpmd/phpmd": "^2.15",
+    "squizlabs/php_codesniffer": "^4.0"
+  },
+  "scripts": {
+    "check-code": [
+      "php ./vendor/bin/phpcs src",
+      "php ./vendor/bin/phpstan analyse src --ansi",
+      "php -d error_reporting=$(php -r 'echo E_ERROR | E_WARNING;') ./vendor/bin/phpmd src text phpmd.xml"
+    ]
   }
 }

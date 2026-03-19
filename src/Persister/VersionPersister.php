@@ -1,6 +1,8 @@
-<?php 
+<?php
 
 declare(strict_types=1);
+
+namespace MHD\RmtVersioning\Persister;
 
 use Liip\RMT\Context;
 use Liip\RMT\Version\Persister\VcsTagPersister;
@@ -14,11 +16,11 @@ class VersionPersister extends VcsTagPersister
      */
     public function getCurrentVersion(): string
     {
-        $versionTxtFileManager = new VersionTxtFileManager(Context::getParam('project-root'));
-        // we are basing the current version on the contents of the 'VERSION.txt' file, if 
+        $fileManager = new VersionTxtFileManager(Context::getParam('project-root'));
+        // we are basing the current version on the contents of the 'VERSION.txt' file, if
         // this file exists
 
-        $currentVersion = $versionTxtFileManager->readVersion();
+        $currentVersion = $fileManager->readVersion();
         if ($currentVersion === '') {
             // could not read the file, fallback to parent functionality
             $currentVersion = parent::getCurrentVersion();
