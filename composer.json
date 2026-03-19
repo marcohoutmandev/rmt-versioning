@@ -3,6 +3,7 @@
   "description": "Extension for the RMT package. Used for adding custom versioning + changelog handeling. ",
   "type": "library",
   "homepage": "https://github.com/MarcoHoutmanDev/rmt-versioning",
+  "version": "1.0.1",
   "keywords": [
     "RMT",
     "Versioning"
