@@ -1,3 +1,5 @@
+- Adds Packagist publish GitHub workflow
+
 1.2.0 - 2026-03-20 16:30
 ------------------------
 - Adds Version to composer.json with Action
