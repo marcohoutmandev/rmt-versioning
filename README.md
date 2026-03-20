@@ -31,9 +31,9 @@ master:
         vcs-tag:
             tag-prefix: ''         # No more prefix for tags
     pre-release-actions:
-        vendor/marcohoutmandev/rmt-versioning/src/Action/VersionTxtAction.php: ~
-        vendor/marcohoutmandev/rmt-versioning/src/Action/ChangelogTxtAction.php: ~
-        vendor/marcohoutmandev/rmt-versioning/src/Action/ComposerJsonAction.php: ~
+        vendor/marcohoutmandev/rmt-versioning/bin/UpdateVersionTxtAction.php: ~
+        vendor/marcohoutmandev/rmt-versioning/bin/UpdateChangelogTxtAction.php: ~
+        vendor/marcohoutmandev/rmt-versioning/bin/UpdateComposerJsonAction.php: ~
         vcs-commit: ~              # Commit the CHANGELOG
 ```
 
