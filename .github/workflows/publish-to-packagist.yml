@@ -22,8 +22,8 @@ jobs:
         run: composer install --no-progress
 
       - name: Publish to Packagist
-        uses: mnavarrocarter/packagist-update@v1
+        uses: mnavarrocarter/packagist-update@v1.0
         with:
           username: ${{ secrets.PACKAGIST_USERNAME }}
           api_token: ${{ secrets.PACKAGIST_API_TOKEN }}
-          package_name: 'marcohoutmandev/rmt-versioning'  # Vervang door jouw package naam   
+          package_name: 'marcohoutmandev/rmt-versioning'
