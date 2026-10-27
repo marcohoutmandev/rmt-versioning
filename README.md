@@ -38,3 +38,16 @@ master:
 ```
 
 Then run the RMT command just like you are used to, but sit back and relax while the actions do all the manual work for you.
+
+## Contact
+Questions, ideas or found a bug? Feel free to get in touch.
+
+| | |
+|---|---|
+| **Author** | Marco Houtman |
+| **Website** | [www.marcohoutman.dev](https://www.marcohoutman.dev) |
+| **Email** | [post@marcohoutman.dev](mailto:post@marcohoutman.dev) |
+| **Issues** | [GitHub issue tracker](https://github.com/marcohoutmandev/rmt-versioning/issues) |
+| **Package** | [marcohoutmandev/rmt-versioning on Packagist](https://packagist.org/packages/marcohoutmandev/rmt-versioning) |
+
+Bug reports and pull requests are welcome. If you find this extension useful, a ⭐ on [GitHub](https://github.com/marcohoutmandev/rmt-versioning) is much appreciated!
